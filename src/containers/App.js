@@ -20,7 +20,7 @@ class App extends Component {
 		.then(users => this.setState({robots: users})); // Getting data in the form of JSON from the API
 	}
 
-	onSearchChange = (event) => {
+	onSearchChange = (event) => {     //methods are declared as normal functions in C++, Java
 		// console.log(event.target.value);
 		this.setState({ searchfield: event.target.value });
 	}
@@ -33,7 +33,7 @@ class App extends Component {
 
 		return (!robots.length)?  //Returns false
 			<h1 className='tc'>Loading</h1>
-		 :                       //using tertiarty operator instead of if else
+		 :                       
 			(
 				<div className='tc'>
 					<h1 className='f1'>RoboFriends</h1>

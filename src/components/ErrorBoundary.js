@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 
 class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       hasError: false
     }
   }
-}
 
-componentDidCatch(error, info) {
-  this.setState({hasError: true});
-}
-
-render() {
-  if (this.state.hasError) {
-    return <h1>Error Encountered! Component cannot load!</h1>
+  componentDidCatch(error, info) {
+    this.setState({hasError: true});
   }
-  return this.props.children;
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Error! Cannot load component!</h1>
+    }
+    return this.props.children;
+  }
 }
+
+
 
 export default ErrorBoundary;
